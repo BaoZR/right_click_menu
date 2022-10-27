@@ -11,11 +11,15 @@ CONFIG += c++17
 SOURCES += \
     contentmenuevent.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mylistview.cpp \
+    mytableview.cpp
 
 HEADERS += \
     contentmenuevent.h \
-    mainwindow.h
+    mainwindow.h \
+    mylistview.h \
+    mytableview.h
 
 FORMS += \
     mainwindow.ui
