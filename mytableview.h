@@ -7,20 +7,23 @@
 #include <QMenu>
 #include <QEvent>
 #include <QHeaderView>
+#include <QDebug>
 
-class MyTableView : public QWidget
+class MyTableView : public QTableView
 {
     Q_OBJECT
 public:
     explicit MyTableView(QWidget *parent = nullptr);
-
+    void addRow(QString& tmpl_name);
+    //void setModel();
+    //int  get_item_count();
  private:
-    QTableView  view;
+    //QTableView  view;
     QStandardItemModel model;
     QMenu menu;
     bool eventFilter(QObject* obj, QEvent *evt);//事件过滤器
 signals:
-
+    void delete_item_signal(QString name);
 public slots:
     void onDelete(void);
 

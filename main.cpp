@@ -7,8 +7,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //MyListView   w;
-    MyTableView w;
+    MyListView   w;
+    //MyTableView w;
     //MainWindow w;
     w.show();
     return a.exec();
