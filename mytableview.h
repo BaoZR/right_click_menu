@@ -14,7 +14,8 @@ class MyTableView : public QTableView
     Q_OBJECT
 public:
     explicit MyTableView(QWidget *parent = nullptr);
-    void addRow(QString& tmpl_name);
+    void add_row(QString& tmpl_name);
+    void remove_rows();
     //void setModel();
     //int  get_item_count();
  private:
@@ -25,7 +26,7 @@ public:
 signals:
     void delete_item_signal(QString name);
 public slots:
-    void onDelete(void);
+    void on_delete(void);
 
 };
 

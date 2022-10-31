@@ -18,12 +18,13 @@ MyTableView::MyTableView(QWidget *parent)
 
 
     this->installEventFilter(this);//设置事件过滤器
-    menu.addAction("删除",this,SLOT(onDelete()));     //设置菜单项,并连接槽函数
+    menu.addAction("删除",this,SLOT(on_delete()));     //设置菜单项,并连接槽函数
 
 
 }
-void MyTableView::onDelete(void)
+void MyTableView::on_delete(void)
 {
+    this->setEnabled(false);
     delete_item_signal(this->currentIndex().data().toString());
     model.removeRow(this->currentIndex().row());   //根据当前鼠标所在的索引的行位置,删除一行
     this->clearSelection();
@@ -41,7 +42,7 @@ bool MyTableView::eventFilter(QObject* obj, QEvent *evt)
     return QWidget::eventFilter(obj,evt);//返回事件过滤器
 }
 
-void MyTableView::addRow(QString& tmpl_name)
+void MyTableView::add_row(QString& tmpl_name)
 {
     QStandardItem* item = new QStandardItem;
     item->setData(tmpl_name, Qt::DisplayRole);
@@ -49,6 +50,11 @@ void MyTableView::addRow(QString& tmpl_name)
 
     int t = model.rowCount();
     qDebug()<< QString(t);
+}
+
+void MyTableView::remove_rows()
+{
+    this->model.clear();
 }
 
 //void MyTableView::setModel()
