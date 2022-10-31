@@ -8,10 +8,10 @@ MyTableView::MyTableView(QWidget *parent)
 {
     (this->horizontalHeader())->setVisible(false);
     (this->verticalHeader())->setVisible(false);//去掉自动序号列
-    //view.setFocusPolicy(Qt::NoFocus);//取消焦点
-   // view.setEditTriggers(QAbstractItemView::NoEditTriggers);//设置无法编辑
-   // view.setSelectionMode(QAbstractItemView::SingleSelection);//设置视图只能选择一个项目
-   // view.setSelectionBehavior(QAbstractItemView::SelectRows);//设置视图只能选择行
+    this->setFocusPolicy(Qt::NoFocus);//取消焦点
+    this->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置无法编辑
+   this->setSelectionMode(QAbstractItemView::SingleSelection);//设置视图只能选择一个项目
+   this->setSelectionBehavior(QAbstractItemView::SelectRows);//设置视图只能选择行
     this->setModel(&model);//设置显示模型
     this->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);//自适应所有列，让它布满空间
   //  view.verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
